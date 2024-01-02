@@ -9,7 +9,6 @@ export const typeDefs = gql`
   }
 
   type Query {
-    hello: String,
     getListArticle: [Article],
     getArticle(id: ID): Article,
   }
@@ -21,6 +20,8 @@ export const typeDefs = gql`
   }
 
   type Mutation {
-    createArticle(article: ArticleInput): Article
+    createArticle(article: ArticleInput): Article,
+    deleteArticle(id: ID): String,
+    updateArticle(id: ID, article: ArticleInput): Article
   }
 `;
